@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-xlg-9 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <ba-card title="Special Request Stats" baCardClass="medium-card">
+      <ba-chartist-chart baChartistChartClass="ct-chart" baChartistChartType="Line" [baChartistChartData]="dataForChart" [baChartistChartOptions]="optionForChart">
+      </ba-chartist-chart>
+    </ba-card>
+  </div>
+  <!--2-->
+  <div class="col-xlg-9 col-xl-6 col-lg-6  col-md-12 col-sm-12 col-12">
+    <div class="row">
+      <ba-card class="col-xlg-8 col-xl-12 col-lg-12 col-md-7 col-sm-12 col-12" title="Request Count" baCardClass="medium-card">
+        <div class="charts">
+          <div class="charts">
+            <div>
+              <span>{{dataForCount[0].requestRouteTemplate}} - {{dataForCount[0].count}}</span>
+              <div class="charts__chart chart--green" [ngClass]="'chart--p'+this.Math.round(dataForCount[0].count * 100 / dataForCount[0].count)">{{this.Math.floor(dataForCount[0].count * 100 / dataForCount[0].count)}}%</div>
+              <span>{{dataForCount[1].requestRouteTemplate}} - {{dataForCount[1].count}}</span>
+              <div class="charts__chart chart--yellow" [ngClass]="'chart--p'+this.Math.round(dataForCount[1].count * 100 / dataForCount[0].count)">{{this.Math.floor(dataForCount[1].count * 100 / dataForCount[0].count)}}%</div>
+              <span>{{dataForCount[2].requestRouteTemplate}} - {{dataForCount[2].count}}</span>
+              <div class="charts__chart chart--blue" [ngClass]="'chart--p'+this.Math.round(dataForCount[2].count * 100 / dataForCount[0].count)">{{this.Math.floor(dataForCount[2].count * 100 / dataForCount[0].count)}}%</div>
+              <span>{{dataForCount[3].requestRouteTemplate}} - {{dataForCount[3].count}}</span>
+              <div class="charts__chart chart--red" [ngClass]="'chart--p'+this.Math.round(dataForCount[3].count * 100 / dataForCount[0].count)">{{this.Math.floor(dataForCount[3].count * 100 / dataForCount[0].count)}}%</div>
+              <span>{{dataForCount[4].requestRouteTemplate}} - {{dataForCount[4].count}}</span>
+              <div class="charts__chart chart--gray" [ngClass]="'chart--p'+this.Math.round(dataForCount[4].count * 100 / dataForCount[0].count)">{{this.Math.floor(dataForCount[4].count * 100 / dataForCount[0].count)}}%</div>
+            </div>
+          </div>
+          <!-- /.charts -->
+        </div>
+      </ba-card>
+    </div>
+  </div>
+  <!--3-->
+  <div class="col-xlg-9 col-xl-6 col-lg-6  col-md-12 col-sm-12 col-12">
+    <div class="row">
+      <ba-card class="col-xlg-8 col-xl-12 col-lg-12 col-md-7 col-sm-12 col-12" title="Most Response Time" baCardClass="medium-card">
+        <div class="charts">
+          <div class="charts">
+            <div>
+              <span>{{dataForMostRequestTime[1].requestRouteTemplate}} - {{dataForMostRequestTime[1].maxTime}}</span>
+              <div class="charts__chart chart--green" [ngClass]="'chart--p'+this.Math.round(dataForMostRequestTime[1].maxTime * 100 / dataForMostRequestTime[1].maxTime)">{{this.Math.floor(dataForMostRequestTime[1].maxTime * 100 / dataForMostRequestTime[1].maxTime)}}%</div>
+              <span>{{dataForMostRequestTime[2].requestRouteTemplate}} - {{dataForMostRequestTime[2].maxTime}}</span>
+              <div class="charts__chart chart--yellow" [ngClass]="'chart--p'+this.Math.round(dataForMostRequestTime[2].maxTime * 100 / dataForMostRequestTime[1].maxTime)">{{this.Math.floor(dataForMostRequestTime[2].maxTime * 100 / dataForMostRequestTime[1].maxTime)}}%</div>
+              <span>{{dataForMostRequestTime[3].requestRouteTemplate}} - {{dataForMostRequestTime[3].maxTime}}</span>
+              <div class="charts__chart chart--blue" [ngClass]="'chart--p'+this.Math.round(dataForMostRequestTime[3].maxTime * 100 / dataForMostRequestTime[1].maxTime)">{{this.Math.floor(dataForMostRequestTime[3].maxTime * 100 / dataForMostRequestTime[1].maxTime)}}%</div>
+              <span>{{dataForMostRequestTime[4].requestRouteTemplate}} - {{dataForMostRequestTime[4].maxTime}}</span>
+              <div class="charts__chart chart--red" [ngClass]="'chart--p'+this.Math.round(dataForMostRequestTime[4].maxTime * 100 / dataForMostRequestTime[1].maxTime)">{{this.Math.floor(dataForMostRequestTime[4].maxTime * 100 / dataForMostRequestTime[1].maxTime)}}%</div>
+              <span>{{dataForMostRequestTime[5].requestRouteTemplate}} - {{dataForMostRequestTime[5].maxTime}}</span>
+              <div class="charts__chart chart--gray" [ngClass]="'chart--p'+this.Math.round(dataForMostRequestTime[5].maxTime * 100 / dataForMostRequestTime[1].maxTime)">{{this.Math.floor(dataForMostRequestTime[5].maxTime * 100 / dataForMostRequestTime[1].maxTime)}}%</div>
+            </div>
+          </div>
+          <!-- /.charts -->
+        </div>
+      </ba-card>
+    </div>
+  </div>
+  <!--4-->
+  <div class="col-xlg-9 col-xl-6 col-lg-6  col-md-12 col-sm-12 col-12">
+    <div class="row">
+      <ba-card class="col-xlg-8 col-xl-12 col-lg-12 col-md-7 col-sm-12 col-12" title="Avg. Response Time" baCardClass="medium-card">
+        <div class="charts">
+          <div class="charts">
+            <div>
+              <span>{{dataForAvgRequestTime[1].requestRouteTemplate}} - {{dataForAvgRequestTime[1].avgTime}}</span>
+              <div class="charts__chart chart--green" [ngClass]="'chart--p'+this.Math.round(dataForAvgRequestTime[1].avgTime * 100 / dataForAvgRequestTime[0].avgTime)">{{this.Math.floor(dataForAvgRequestTime[1].avgTime * 100 / dataForAvgRequestTime[0].avgTime)}}%</div>
+              <span>{{dataForAvgRequestTime[2].requestRouteTemplate}} - {{dataForAvgRequestTime[2].avgTime}}</span>
+              <div class="charts__chart chart--yellow" [ngClass]="'chart--p'+this.Math.round(dataForAvgRequestTime[2].avgTime * 100 / dataForAvgRequestTime[0].avgTime)">{{this.Math.floor(dataForAvgRequestTime[2].avgTime * 100 / dataForAvgRequestTime[0].avgTime)}}%</div>
+              <span>{{dataForAvgRequestTime[3].requestRouteTemplate}} - {{dataForAvgRequestTime[3].avgTime}}</span>
+              <div class="charts__chart chart--blue" [ngClass]="'chart--p'+this.Math.round(dataForAvgRequestTime[3].avgTime * 100 / dataForAvgRequestTime[0].avgTime)">{{this.Math.floor(dataForAvgRequestTime[3].avgTime * 100 / dataForAvgRequestTime[0].avgTime)}}%</div>
+              <span>{{dataForAvgRequestTime[4].requestRouteTemplate}} - {{dataForAvgRequestTime[4].avgTime}}</span>
+              <div class="charts__chart chart--red" [ngClass]="'chart--p'+this.Math.round(dataForAvgRequestTime[4].avgTime * 100 / dataForAvgRequestTime[0].avgTime)">{{this.Math.floor(dataForAvgRequestTime[4].avgTime * 100 / dataForAvgRequestTime[0].avgTime)}}%</div>
+              <span>{{dataForAvgRequestTime[5].requestRouteTemplate}} - {{dataForAvgRequestTime[5].avgTime}}</span>
+              <div class="charts__chart chart--gray" [ngClass]="'chart--p'+this.Math.round(dataForAvgRequestTime[5].avgTime * 100 / dataForAvgRequestTime[0].avgTime)">{{this.Math.floor(dataForAvgRequestTime[5].avgTime * 100 / dataForAvgRequestTime[0].avgTime)}}%</div>
+
+            </div>
+          </div>
+          <!-- /.charts -->
+        </div>
+      </ba-card>
+    </div>
+  </div>
+</div>
